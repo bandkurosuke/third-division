@@ -1,0 +1,8 @@
+# use glob syntax
+syntax: glob
+
+# ignore
+*.bak
+*.~
+/*.html
+/PLANNING-hejob.md
