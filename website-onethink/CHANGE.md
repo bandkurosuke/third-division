@@ -14,3 +14,4 @@ CHANGE LOG: Website-Onethink: Third Division's Organic Farm (参课实验田)
 初始化安装Onethink V1.1
 设置DB与网站内容
 代码添加相应类(Issue, Idea)
+调整前端显示内容

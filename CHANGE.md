@@ -16,3 +16,8 @@ CHANGE LOG: Third Division's Organic Farm (参课实验田)
         ssh repo地址：git@github.com:bandkurosuke/third-division.git
     https://github.com/bandkurosuke/third-division
         ssh repo地址：git@bitbucket.org:bandkurosuke/third-division.git
+
+20150820
+--------
+建立基本的onethink网站
+调整设置
