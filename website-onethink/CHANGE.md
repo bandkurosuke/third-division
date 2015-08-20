@@ -9,9 +9,10 @@ CHANGE LOG: Website-Onethink: Third Division's Organic Farm (参课实验田)
 建立test php文件
 
 --------
-20150819
+20150820
 --------
 初始化安装Onethink V1.1
 设置DB与网站内容
 代码添加相应类(Issue, Idea)
 调整前端显示内容
+发布至121.79.133.195:8081

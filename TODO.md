@@ -5,9 +5,9 @@ To-do List: Third Division's Organic Farm (参课实验田)
 - [x] * 用任一空间开启网络入口
 - [x] * 启用github或bitbucket或国内git平台
     - 增加Logo
-* 搭建简单的群用网络平台（从类似blog的系统出发，开始只需要发文可做记录）
+- [x] * 搭建简单的群用网络平台（从类似blog的系统出发，开始只需要发文可做记录）
 * 记录几个idea
-* 初始使用Onethink(ThinkPHP)，完成类似Wordpress的平台。
+- [x] * 初始使用Onethink(ThinkPHP)，完成类似Wordpress的平台。
 * 初期随时准备重构，替换TP。
     例如Express(NodeJS)+React+MYSQL+Bootstrap+jQuery
     或Symfony2(PHP)+jQuery+Bootstrap+MYSQL

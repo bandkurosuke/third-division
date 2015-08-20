@@ -10,4 +10,4 @@ wwwroot/Uploads/
 
 # secret
 wwwroot/Application/Common/Conf/config.php
-wwwroot/Application/user/Conf/config.php
+wwwroot/Application/User/Conf/config.php
