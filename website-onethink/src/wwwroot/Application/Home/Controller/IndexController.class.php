@@ -26,6 +26,25 @@ class IndexController extends HomeController {
         $this->assign('lists',$lists);//列表
         $this->assign('page',D('Document')->page);//分页
 
+        //滚动栏
+        $Category = D('Category');
+        $postersCat = $Category->info('carousels');
+        $postersCatId = $postersCat['id'];
+        if ($postersCatId > 0) {
+            $posterDocs = D('Document')->lists($postersCatId, "level DESC"); //no extra logic data
+            $posters = array();
+            foreach ($posterDocs as $doc) {
+                $poster = array();
+                $posterData = D('Carousel', 'Logic')->find($doc['id']);
+
+                $poster['id'] = $doc['id'];
+                $poster['title'] = $doc['title'];
+                $poster['cover_id'] = $doc['cover_id'];
+                $poster['url'] = $posterData['url'];
+                $posters[] = $poster;
+            }
+            $this->assign('posters', $posters);
+        }
                  
         $this->display();
     }

@@ -9,101 +9,136 @@
     </header>
 </block>
 
-<block name="side">
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            {:W('Category/lists', array(1, false))}
-        </ul>
-    </div>
-</block>
-
 <block name="body">
-    <div class="span9">
+
+
+    <!-- slides -->
+    <link href="__JS__/flexslider/flexslider.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__JS__/flexslider/jquery.flexslider.js"></script>
+
+    <style>
+        #slides-flexslider {
+            position: relative;
+        }
+
+        #slides-flexslider .flex-control-nav {
+            bottom: 2px;
+            line-height: 20px;
+        }
+    </style>
+
+    <div class="span12 index-section-highlight">
+        <div class="index-section-highlightroller">
+            <div id="slides-flexslider">
+                <ul class="slides">
+                    <volist name="posters" id="poster">
+                        <li class="poster">
+                            <a class="img" target="_blank" href="{$poster['url'] | get_real_url}" title="{$poster['title']}" style="{$i>1 ? "display:block;" : ""}">
+                                <img src="{$poster['cover_id'] | get_cover='path'}" />
+                            </a>
+                            <a class="title" target="_blank" href="{$poster['url'] | get_real_url}" title="{$poster['title']}">{$poster['title']}</a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $(window).load(function() {
+                    $('#slides-flexslider').flexslider({
+                        animation: "slide",
+                        animationLoop: false,
+                        animationSpeed: 200,
+                        controlNav: true,
+                        itemWidth: 600,
+                        itemMargin: 0
+                    });
+                });
+            </script>
+
+        </div>
+        <div class="pull-right index-section-decoration">
+        </div>
+    </div>
+
+    <div class="span12 index-main-contents">
         <!-- Contents
         ================================================== -->
         <section id="contents">
 
             <h2>Docs</h2>
             <hr/>
-            <article:list name="article" category="39" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
+            <div class="row">
+                <article:list name="article" category="39" child="true">
+                <div class="article span3">
+                    <div class="title">
+                        <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
+                    </div>
+                    <div>
+                        <p class="lead">{$article.description}</p>
+                    </div>
+                    <div class="author">
                         <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
+                        <span>@ {$article.create_time|date='Y-m-d H:i',###}</span>
+                    </div>
                 </div>
-                <hr/>
-            </article:list>
+                </article:list>
+            </div>
 
             <h2>Ideas</h2>
             <hr/>
-            <article:list name="article" category="40" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
+            <div class="row">
+                <article:list name="article" category="40" child="true">
+                <div class="article span3">
+                    <div class="title">
+                        <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
+                    </div>
+                    <div>
+                        <p class="lead">{$article.description}</p>
+                    </div>
+                    <div class="author">
                         <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
+                        <span>@ {$article.create_time|date='Y-m-d H:i',###}</span>
+                    </div>
                 </div>
-                <hr/>
-            </article:list>
+                </article:list>
+            </div>
 
             <h2>Issues</h2>
             <hr/>
-            <article:list name="article" category="41" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
+            <div class="row">
+                <article:list name="article" category="41" child="true">
+                <div class="article span3">
+                    <div class="title">
+                        <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
+                    </div>
+                    <div>
+                        <p class="lead">{$article.description}</p>
+                    </div>
+                    <div class="author">
                         <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
+                        <span>@ {$article.create_time|date='Y-m-d H:i',###}</span>
+                    </div>
                 </div>
-                <hr/>
-            </article:list>
+                </article:list>
+            </div>
 
             <h2>Develop</h2>
             <hr/>
-            <article:list name="article" category="42" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
+            <div class="row">
+                <article:list name="article" category="42" child="true">
+                <div class="article span3">
+                    <div class="title">
+                        <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
+                    </div>
+                    <div>
+                        <p class="lead">{$article.description}</p>
+                    </div>
+                    <div class="author">
                         <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
+                        <span>@ {$article.create_time|date='Y-m-d H:i',###}</span>
+                    </div>
                 </div>
-                <hr/>
-            </article:list>
+                </article:list>
+            </div>
         </section>
     </div>
 </block>

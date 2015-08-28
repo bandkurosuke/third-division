@@ -21,8 +21,16 @@ rm -f $SOURCE/Runtime/Logs/Home/*
 rm -f $SOURCE/Runtime/Logs/Install/*
 rm -f $SOURCE/Runtime/Temp/*
 rm -f $SOURCE/Uploads/*
+#config files are exclusive on servers
+rm $SOURCE/Application/Common/Conf/config.php
+rm $SOURCE/Application/User/Conf/config.php
 
 cp -R $SOURCE/* $TARGET/
+
+
+#refresh
+rm -rf $TARGET/Runtime/Cache/*
+rm -rf $TARGET/Runtime/Temp/*
 
 mkdir $TARGET/Data
 chmod -R 777 $TARGET/Data

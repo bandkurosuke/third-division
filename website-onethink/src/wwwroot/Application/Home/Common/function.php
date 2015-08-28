@@ -68,3 +68,22 @@ function get_nav_url($url){
     }
     return $url;
 }
+
+/**
+ * 获取解析URL或外站URL
+ * @param  string $url 本站URL或外站URL
+ * @return string      解析后url
+ * @author hejob@20150608
+ */
+function get_real_url($url){
+    switch ($url) {
+        case 'http://' === substr($url, 0, 7):
+        case 'https://' === substr($url, 0, 8):
+        case '#' === substr($url, 0, 1):
+            break;        
+        default:
+            $url = U($url);
+            break;
+    }
+    return $url;
+}

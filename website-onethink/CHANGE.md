@@ -16,3 +16,9 @@ CHANGE LOG: Website-Onethink: Third Division's Organic Farm (参课实验田)
 代码添加相应类(Issue, Idea)
 调整前端显示内容
 发布至121.79.133.195:8081
+
+--------
+20150828
+--------
+调整首页layout，增加Carousel Slider
+发布
